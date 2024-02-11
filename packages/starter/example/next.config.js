@@ -17,7 +17,7 @@ module.exports = function (phase, { defaultConfig }) {
             '@background': COLORS.GREY,
             '@primary-color': COLORS.PURPLE,
         },
-        basePath: phase === PHASE_PRODUCTION_BUILD ? '' : '',
+        basePath: phase === PHASE_PRODUCTION_BUILD ? '/wallet-adapter/example' : '',
     });
 
     return config;
