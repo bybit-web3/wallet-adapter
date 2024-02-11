@@ -47,7 +47,9 @@ export class SalmonWalletAdapter extends BaseMessageSignerWalletAdapter {
             ? WalletReadyState.Unsupported
             : WalletReadyState.Loadable;
 
-    constructor({ network = 'https://api-node.bybit.com/spot/api/web3/node/sol' }: SalmonWalletAdapterConfig = {}) {
+    constructor({
+        network = 'https://api-node.bybit.com/spot/api/web3/node/sol' as WalletAdapterNetwork,
+    }: SalmonWalletAdapterConfig = {}) {
         super();
         this._network = network;
         this._connecting = false;
