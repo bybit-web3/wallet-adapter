@@ -44,7 +44,7 @@ export const SendTransaction: FC = () => {
 
     return (
         <Button variant="contained" color="secondary" onClick={onClick} disabled={!publicKey}>
-            Send Transaction (devnet)
+            Send Transaction (mainnet)
         </Button>
     );
 };

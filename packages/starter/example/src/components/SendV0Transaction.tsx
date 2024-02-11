@@ -68,7 +68,7 @@ export const SendV0Transaction: FC = () => {
             onClick={onClick}
             disabled={!publicKey || !supportedTransactionVersions?.has(0)}
         >
-            Send V0 Transaction using Address Lookup Table (devnet)
+            Send V0 Transaction using Address Lookup Table (mainnet)
         </Button>
     );
 };

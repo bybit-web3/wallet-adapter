@@ -55,7 +55,7 @@ export const SendLegacyTransaction: FC = () => {
             onClick={onClick}
             disabled={!publicKey || !supportedTransactionVersions?.has('legacy')}
         >
-            Send Legacy Transaction (devnet)
+            Send Legacy Transaction (mainnet)
         </Button>
     );
 };
