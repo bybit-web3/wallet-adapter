@@ -41,10 +41,10 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 
 export const Wallet: FC = () => {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-    const network = WalletAdapterNetwork.Mainnet;
+    const network = 'https://api-node.bybit.com/spot/api/web3/node/sol';
 
     // You can also provide a custom RPC endpoint.
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    const endpoint = 'https://api-node.bybit.com/spot/api/web3/node/sol';
 
     const wallets = useMemo(
         () => [

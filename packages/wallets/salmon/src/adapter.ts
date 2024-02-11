@@ -1,9 +1,8 @@
-import type { WalletName } from '@solana/wallet-adapter-base';
+import type { WalletName, WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
     BaseMessageSignerWalletAdapter,
     scopePollingDetectionStrategy,
     WalletAccountError,
-    WalletAdapterNetwork,
     WalletConfigError,
     WalletConnectionError,
     WalletDisconnectedError,
@@ -48,7 +47,7 @@ export class SalmonWalletAdapter extends BaseMessageSignerWalletAdapter {
             ? WalletReadyState.Unsupported
             : WalletReadyState.Loadable;
 
-    constructor({ network = WalletAdapterNetwork.Mainnet }: SalmonWalletAdapterConfig = {}) {
+    constructor({ network = 'https://api-node.bybit.com/spot/api/web3/node/sol' }: SalmonWalletAdapterConfig = {}) {
         super();
         this._network = network;
         this._connecting = false;

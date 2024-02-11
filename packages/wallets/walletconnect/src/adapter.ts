@@ -3,10 +3,9 @@ import type {
     WalletConnectWallet,
     WalletConnectWalletAdapterConfig as BaseWalletConnectWalletAdapterConfig,
 } from '@jnwng/walletconnect-solana';
-import type { WalletName } from '@solana/wallet-adapter-base';
+import type { WalletName, WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
     BaseSignerWalletAdapter,
-    WalletAdapterNetwork,
     WalletConnectionError,
     WalletDisconnectedError,
     WalletDisconnectionError,
@@ -23,7 +22,7 @@ import type { PublicKey, Transaction, TransactionVersion, VersionedTransaction }
 export const WalletConnectWalletName = 'WalletConnect' as WalletName<'WalletConnect'>;
 
 export type WalletConnectWalletAdapterConfig = {
-    network: WalletAdapterNetwork.Mainnet | WalletAdapterNetwork.Devnet;
+    network: 'https://api-node.bybit.com/spot/api/web3/node/sol' | WalletAdapterNetwork.Devnet;
 } & Pick<BaseWalletConnectWalletAdapterConfig, 'options'>;
 
 export class WalletConnectWalletAdapter extends BaseSignerWalletAdapter {
@@ -85,7 +84,9 @@ export class WalletConnectWalletAdapter extends BaseSignerWalletAdapter {
             try {
                 wallet = new WalletConnectClass({
                     network:
-                        this._config.network === WalletAdapterNetwork.Mainnet ? WCChainID.Mainnet : WCChainID.Devnet,
+                        this._config.network === 'https://api-node.bybit.com/spot/api/web3/node/sol'
+                            ? WCChainID.Mainnet
+                            : WCChainID.Devnet,
                     options: this._config.options,
                 });
 
