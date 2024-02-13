@@ -75,6 +75,12 @@ const SignMessageDynamic = dynamic(async () => (await import('../components/Sign
 const SignTransactionDynamic = dynamic(async () => (await import('../components/SignTransaction')).SignTransaction, {
     ssr: false,
 });
+const SignAllTransactionsDynamic = dynamic(
+    async () => (await import('../components/SignAllTransactions')).SignAllTransactions,
+    {
+        ssr: false,
+    }
+);
 
 const Index: NextPage = () => {
     const { autoConnect, setAutoConnect } = useAutoConnect();
@@ -180,6 +186,9 @@ const Index: NextPage = () => {
                         </TableCell>
                         <TableCell>
                             <SignTransactionDynamic />
+                        </TableCell>
+                        <TableCell>
+                            <SignAllTransactionsDynamic />
                         </TableCell>
                         <TableCell>
                             <SignMessageDynamic />
